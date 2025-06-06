@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "genaiscript": "1.142.3"
+  },
+  "scripts": {
+    "upgrade": "npx -y npm-check-updates -u && npm install",
+    "docker:build": "docker build -t pelikhan-action-genai-critics .",
+    "docker:start": "docker run -e GITHUB_TOKEN pelikhan-action-genai-critics",
+    "act:install": "gh extension install https://github.com/nektos/gh-act",
+    "act": "gh act",
+    "lint": "npx --yes prettier --write genaisrc/",
+    "fix": "genaiscript scripts fix",
+    "typecheck": "genaiscript scripts compile",
+    "configure": "genaiscript configure action",
+    "test": "echo 'No tests defined.'",
+    "start": "genaiscript run action --github-workspace"
+  }
+}
